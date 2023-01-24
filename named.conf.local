@@ -1,0 +1,10 @@
+zone "home.lab" {
+    type master;
+    file "/etc/named/zones/db.home.lab";
+  };
+
+zone "126.168.192.in-addr.arpa" {
+
+    type master;
+    file "/etc/named/zones/db.192.168.126";
+};

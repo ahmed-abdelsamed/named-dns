@@ -1,0 +1,35 @@
+$TTL 1W
+@       IN      SOA     helper.home.lab.   root (
+                        2019070700      ; serial
+                        3H              ; refresh (3 hours)
+                        30M             ; retry (30 minutes)
+                        2W              ; expiry (2 weeks)
+                        1W )            ; minimum (1 week)
+
+
+; Name Server Info
+@       IN      NS      helper.home.lab.
+
+; IP address of Name Server
+helper                     IN      A       192.168.126.9
+
+; A - Record Hostname to IP Address
+helper.home.lab.        IN      A       192.168.126.9
+helper.ocp.home.lab.   IN      A       192.168.126.9
+;
+api.ocp.home.lab.      IN      A       192.168.126.9
+api-int.ocp.home.lab.  IN      A       192.168.126.9
+;
+*.apps.ocp.home.lab.   IN      A       192.168.126.19
+;
+bootstrap.ocp.home.lab. IN     A       192.168.126.10
+;
+master0.ocp.home.lab.  IN      A       192.168.126.20
+master1.ocp.home.lab.  IN      A       192.168.126.30
+master2.ocp.home.lab.  IN      A       192.168.126.40
+;
+worker0.ocp.home.lab.  IN      A       192.168.126.50
+worker1.ocp.home.lab.  IN      A       192.168.126.60
+vcsa.home.lab.           IN      A       192.168.126.200
+;
+;EOF
