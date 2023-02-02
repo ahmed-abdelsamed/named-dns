@@ -14,14 +14,15 @@ $TTL 1W
 9.126.168.192.in-addr.arpa.       IN      PTR     api.ocp.home.lab.
 9.126.168.192.in-addr.arpa.       IN      PTR     api-int.ocp.home.lab.
 ;
-10.126.168.192.in-addr.arpa.     IN      PTR     bootstrap.ocp.home.lab.
+100.126.168.192.in-addr.arpa.     IN      PTR     bootstrap.ocp.home.lab.
 ;
-20.126.168.192.in-addr.arpa.     IN      PTR     master0.ocp.home.lab.
-30.126.168.192.in-addr.arpa.     IN      PTR     master1.ocp.home.lab.
-40.126.168.192.in-addr.arpa.     IN      PTR     master2.ocp.home.lab.
+10.126.168.192.in-addr.arpa.     IN      PTR     master0.ocp.home.lab.
+20.126.168.192.in-addr.arpa.     IN      PTR     master1.ocp.home.lab.
+30.126.168.192.in-addr.arpa.     IN      PTR     master2.ocp.home.lab.
 ;
-50.126.168.192.in-addr.arpa.     IN      PTR     worker0.ocp.home.lab.
-60.126.168.192.in-addr.arpa.     IN      PTR     worker1.ocp.home.lab.
+40.126.168.192.in-addr.arpa.     IN      PTR     worker0.ocp.home.lab.
+50.126.168.192.in-addr.arpa.     IN      PTR     worker1.ocp.home.lab.
+60.126.168.192.in-addr.arpa.     IN      PTR     worker2.ocp.home.lab.
 200.126.168.192.in-addr.arpa.    IN      PTR     vcsa.home.lab.
 ;
 ;EOF
