@@ -1,0 +1,57 @@
+$TTL 1W
+@       IN      SOA     bastion.spring.local.   root (
+                        2019070700      ; serial
+                        3H              ; refresh (3 hours)
+                        30M             ; retry (30 minutes)
+                        2W              ; expiry (2 weeks)
+                        1W )            ; minimum (1 week)
+
+
+; Name Server Info
+@       IN      NS      bastion.spring.local.
+
+; IP address of Name Server
+bastion                     IN      A       192.168.6.240
+
+; A - Record Hostname to IP Address
+bastion.spring.local.        IN      A       192.168.6.240
+bastion.ocp.spring.local.   IN      A       192.168.6.240
+ocp.spring.local.           IN       A      192.168.6.240
+;
+api.ocp.spring.local.      IN      A       192.168.6.240
+api-int.ocp.spring.local.  IN      A       192.168.6.240
+etcd-1.ocp.spring.local.   IN       A       192.168.6.11
+etcd-2.ocp.spring.local.   IN       A         192.168.6.12
+etcd-3.ocp.spring.local.   IN       A       192.168.6.13
+;
+*.apps.ocp.spring.local.   IN      A       192.168.6.242
+;
+elb.ocp.spring.local.      IN      A        192.168.6.241
+;
+bootstrap.ocp.spring.local. IN     A       192.168.6.10
+;
+control-plane-1.ocp.spring.local.  IN      A       192.168.6.11
+control-plane-2.ocp.spring.local.  IN      A       192.168.6.12
+control-plane-3.ocp.spring.local.  IN      A       192.168.6.13
+;
+worker-1.ocp.spring.local.  IN      A       192.168.6.21
+worker-2.ocp.spring.local.  IN      A       192.168.6.22
+worker-3.ocp.spring.local.   IN      A       192.168.6.23
+;
+infra-1.ocp.spring.local.               IN      A       192.168.6.31
+infra-2.ocp.spring.local.               IN      A   192.168.6.32
+infra-3.ocp.spring.local.               IN      A   192.168.6.33
+;
+storage-1.ocp.spring.local.             IN              A       192.168.6.41
+storage-2.ocp.spring.local.             IN      A   192.168.6.42
+storage-3.ocp.spring.local.             IN      A   192.168.6.43
+;
+; OpenShift internal cluster IPs - SRV record
+
+_etcd-server-ssl._tcp.ocp.spring.local.    86400     IN    SRV     0    10    2380    etcd-1.ocp.spring.local.
+_etcd-server-ssl._tcp.ocp.spring.local.    86400     IN    SRV     0    10    2380    etcd-2.ocp.spring.local.
+_etcd-server-ssl._tcp.ocp.spring.local.    86400     IN    SRV     0    10    2380    etcd-3.ocp.spring.local.
+
+
+;EOF
+

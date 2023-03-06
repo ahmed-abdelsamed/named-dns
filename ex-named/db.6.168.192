@@ -1,0 +1,40 @@
+
+$TTL 1W
+@       IN      SOA     bastion.spring.local.   root (
+                        2019070700      ; serial
+                        3H              ; refresh (3 hours)
+                        30M             ; retry (30 minutes)
+                        2W              ; expiry (2 weeks)
+                        1W )            ; minimum (1 week)
+;
+; name servers - NS records
+@                               IN      NS      bastion.spring.local.
+
+; PTR Records
+240.6.168.192.in-addr.arpa.       IN      PTR     bastion.spring.local.
+240.6.168.192.in-addr.arpa.       IN      PTR     api.ocp.spring.local.
+240.6.168.192.in-addr.arpa.       IN      PTR     api-int.ocp.spring.local.
+241.6.168.192.in-addr.arpa.       IN      PTR    elb.ocp.spring.local.
+240.6.168.192.in-addr.arpa.      IN       PTR    ocp.spring.local.
+11.6.168.192.in-addr.arpa.       IN       PTR   etcd-1.ocp.spring.local.
+12.6.168.192.in-addr-arpa.       IN      PTR    etcd-2.ocp.spring.local.
+13.6.168.192.in-addr-arpa.       IN      PTR   etcd-3.ocp.spring.local.
+;
+10.6.168.192.in-addr.arpa.     IN      PTR     bootstrap.ocp.spring.local.
+;
+11.6.168.192.in-addr.arpa.     IN      PTR     control-plane-1.ocp.spring.local.
+12.6.168.192.in-addr.arpa.     IN      PTR     control-plane-2.ocp.spring.local.
+13.6.168.192.in-addr.arpa.     IN      PTR     control-plane-3.ocp.spring.local.
+;
+21.6.168.192.in-addr.arpa.     IN      PTR     worker-1.ocp.spring.local.
+22.6.168.192.in-addr.arpa.     IN      PTR     worker-2.ocp.spring.local.
+23.6.168.192.in-addr.arpa.     IN      PTR     worker-3.ocp.spring.local.
+;
+31.6.168.192.in-addr.arpa.     IN      PTR     infra-1.ocp.spring.local.
+32.6.168.192.in-addr.arpa.     IN      PTR     infra-2.ocp.spring.local.
+33.6.168.192.in-addr.arpa.     IN      PTR     infra-3.ocp.spring.local.
+;
+41.6.168.192.in-addr.arpa.     IN      PTR     storage-1.ocp.spring.local.
+42.6.168.192.in-addr.arpa.     IN      PTR     storage-2.ocp.spring.local.
+43.6.168.192.in-addr.arpa.     IN      PTR     storage-3.ocp.spring.local.
+;EOF
