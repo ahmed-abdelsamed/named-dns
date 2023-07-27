@@ -1,0 +1,41 @@
+$TTL    604800
+@       IN      SOA     bastion.vcexpert.local. contact.vcexpert.local (
+                  1     ; Serial
+             604800     ; Refresh
+              86400     ; Retry
+            2419200     ; Expire
+             604800     ; Minimum
+)
+        IN      NS      bastion
+
+bastion.vcexpert.local.          IN      A       102.168.6.150
+
+; Temp Bootstrap Node
+boostrap.ocp.vcexpert.local.        IN      A      192.168.6.10
+
+; Control Plane Nodes
+master1.ocp.vcexpert.local.         IN      A      192.168.6.11
+master2.ocp.vcexpert.local.         IN      A      192.168.6.12
+master3.ocp.vcexpert.local.         IN      A      192.168.6.13
+
+; Worker Nodes
+worker1.ocp.vcexpert.local.        IN      A      192.168.6.21
+worker2.ocp.vcexpert.local.        IN      A      192.168.6.22
+
+; OpenShift Internal - Load balancer
+api.ocp.vcexpert.local.        IN    A    102.168.6.150
+api-int.ocp.vcexpert.local.    IN    A    102.168.6.150
+*.apps.ocp.vcexpert.local.     IN    A    102.168.6.150
+
+; ETCD Cluster
+etcd-0.ocp.vcexpert.local.    IN    A     192.168.6.11
+etcd-1.ocp.vcexpert.local.    IN    A     192.168.6.12
+etcd-2.ocp.vcexpert.local.    IN    A     192.168.6.13
+
+; OpenShift Internal SRV records (cluster name = ocp)
+_etcd-server-ssl._tcp.ocp.vcexpert.local.    86400     IN    SRV     0    10    2380    etcd-0.ocp
+_etcd-server-ssl._tcp.ocp.vcexpert.local.    86400     IN    SRV     0    10    2380    etcd-1.ocp
+_etcd-server-ssl._tcp.ocp.vcexpert.local.    86400     IN    SRV     0    10    2380    etcd-2.ocp
+
+oauth-openshift.apps.ocp.vcexpert.local.     IN     A     102.168.6.150
+console-openshift-console.apps.ocp.vcexpert.local.     IN     A     102.168.6.150
