@@ -1,6 +1,7 @@
 # named-dns with forward to 8.8.8.8 & 8.8.4.4
 
-install bind bind-utils -y
+sudo dnf install bind bind-utils -y
+sudo apt install bind9 bind9utils bind9-doc
 
 /etc/named.conf
 --------------------------------------------
